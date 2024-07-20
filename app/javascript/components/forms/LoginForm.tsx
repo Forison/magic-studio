@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link as RouterLink, redirect } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 import { Formik } from 'formik'
 import EyeOutlined from '@ant-design/icons/EyeOutlined'
 import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined'
@@ -15,8 +15,9 @@ import {
   OutlinedInput,
   Stack,
   Typography,
+  AlertColor,
 } from '@mui/material'
-import Omniauth from '../shared/OmniAuth'
+// import Omniauth from '../shared/OmniAuth'
 import { LoginSchema } from '../schema'
 import { useMutation } from '@apollo/client'
 import Banner from '../shared/Banner'
@@ -38,7 +39,7 @@ export default function LoginForm(): JSX.Element {
   const [checked, setChecked] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [message, setMessage] = useState('')
-  const [severity, setSeverity] = useState(null)
+  const [severity, setSeverity] = useState<AlertColor>('success')
   const [login, { loading }] = useMutation(SIGNIN_USER, {
     onCompleted: () => {
       window.location.replace('/home')
@@ -172,7 +173,7 @@ export default function LoginForm(): JSX.Element {
                 </Button>
               </Grid>
               <Grid item xs={12}>
-                <Omniauth title="Login with" />
+                {/* <Omniauth title="Login with" /> */}
               </Grid>
             </Grid>
           </form>

@@ -20,7 +20,7 @@ import {
 import { strengthColor, strengthIndicator } from '../utils/passwordStrength'
 import { SignUpSchema } from '../schema'
 import Banner from '../shared/Banner'
-import Omniauth from '../shared/OmniAuth'
+// import Omniauth from '../shared/OmniAuth'
 import { User } from '../interface/index'
 import { REGISTER_USER } from '../api/mutations'
 import PhoneInput from 'react-phone-input-2'
@@ -277,7 +277,7 @@ export default function UserForm(): JSX.Element {
                 </Button>
               </Grid>
               <Grid item xs={12}>
-                <Omniauth title="Sign up with" />
+                {/* <Omniauth title="Sign up with" /> */}
               </Grid>
             </Grid>
           </form>

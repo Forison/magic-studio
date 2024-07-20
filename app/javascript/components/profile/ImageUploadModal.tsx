@@ -3,7 +3,7 @@ import Button from '@mui/material/Button'
 import Modal from '@mui/material/Modal'
 import { Formik } from 'formik'
 import Banner from '../shared/Banner'
-import { Box } from '@mui/material'
+import { AlertColor, Box } from '@mui/material'
 import FileUploadForm from '../forms/ImageUploadForm'
 import { useMutation } from '@apollo/client'
 import { UPLOAD_IMAGE } from '../api/mutations'
@@ -12,10 +12,6 @@ import { UPLOAD_IMAGE } from '../api/mutations'
 
 const initialValue = {
   image: '',
-}
-
-interface ImageProps {
-  image: string
 }
 
 const style = {
@@ -32,20 +28,19 @@ const style = {
 };
 
 export default function ImageUploadModal(): JSX.Element {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState<boolean>(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
-  const [message, setMessage] = useState('')
-  const [severity, setSeverity] = useState(null)
+  const [message, setMessage] = useState<string>('')
+  const [severity, setSeverity] = useState<AlertColor>('success')
 
-  const [uploadImage, { loading }] = useMutation(UPLOAD_IMAGE, {
+  const [uploadImage] = useMutation(UPLOAD_IMAGE, {
     onCompleted: (data) => {
       if (!!data) {
         setSeverity('success')
         setMessage('Image upload successful')
         setTimeout(() => {
           handleClose()
-          setSeverity('')
           setMessage('')
         }, 2000);
       }
@@ -57,12 +52,14 @@ export default function ImageUploadModal(): JSX.Element {
   })
 
   const handleSubmit = () => {
-    const file = (document.getElementById('image') as HTMLInputElement).files[0]
-    uploadImage({
-      variables: {
-        image: file
-      }
-    })
+    const file = (document.getElementById('image') as HTMLInputElement | null)
+    if (file?.files) {
+      uploadImage({
+        variables: {
+          image: file.files[0]
+        }
+      })
+    }
   }
 
   return (

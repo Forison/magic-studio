@@ -1,10 +1,9 @@
 import { Avatar } from '@mui/material'
-import React from 'react'
 import { SxProps } from '@mui/material'
 
 interface Props {
   firstName: string
-  imageUrl: string | undefined
+  imageUrl: string
   sx?: SxProps
 }
 

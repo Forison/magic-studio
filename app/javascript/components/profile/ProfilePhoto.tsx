@@ -7,7 +7,7 @@ import ImageOrInitial from '../shared/ImageOrInitial'
 import ImageUploadModal from './ImageUploadModal'
 
 interface Props {
-  imageUrl?: string
+  imageUrl: string
   firstName: string
   fullName: string
 }

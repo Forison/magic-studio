@@ -42,7 +42,7 @@ function MainCard(
     title,
     ...others
   }: Props,
-  ref
+  ref: ((instance: HTMLDivElement | null) => void | React.DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES[keyof React.DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES]) | React.RefObject<HTMLDivElement> | null | undefined
 ): JSX.Element {
   const theme = useTheme()
   boxShadow = theme.palette.mode === 'dark' ? boxShadow || true : boxShadow

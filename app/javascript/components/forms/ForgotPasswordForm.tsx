@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
 import {
+  AlertColor,
   Button,
   FormHelperText,
   Grid,
@@ -9,7 +10,7 @@ import {
 } from '@mui/material'
 import { forgotPasswordSchema } from '../schema'
 import Banner from '../shared/Banner'
-import { gql, useMutation } from '@apollo/client'
+import { useMutation } from '@apollo/client'
 import { FORGOT_PASSWORD } from '../api/mutations'
 
 const initialValue = {
@@ -22,7 +23,7 @@ interface EmailProps {
 export default function ForgotPasswordForm(): JSX.Element {
 
   const [message, setMessage] = useState('')
-  const [severity, setSeverity] = useState(null)
+  const [severity, setSeverity] = useState<AlertColor>('success')
 
   const [forgotPassword, { loading }] = useMutation(FORGOT_PASSWORD, {
     onCompleted: (data) => {

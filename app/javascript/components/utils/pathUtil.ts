@@ -14,7 +14,7 @@ export const isSignUpPage = (): boolean => {
   return false
 }
 
-export const getToken = (): string => {
+export const getToken = (): string | null => {
   const location = useLocation()
   const params = new URLSearchParams(location.search)
   const token = params.get('token')
