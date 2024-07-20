@@ -1,31 +1,31 @@
-import React from 'react';
-import styled from 'styled-components';
-import heading from '../images/heading.jpg';
+import React from 'react'
+import styled from 'styled-components'
+import heading from '../images/heading.jpg'
 
 const HowItWorksContainer = styled.section`
   padding: 50px 100px;
   background-color: #fff;
-`;
+`
 
 const HowItWorks = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 100px 0;
-`;
+`
 
 const WorkNote = styled.div`
   padding: 0 100px;
-`;
+`
 const WorkNoteHeader = styled.p`
   font-size: 50px;
-`;
+`
 const WorkNoteSemi = styled.p`
   font-size: 20px;
-`;
-const WorkNoteContent = styled.p``;
+`
+const WorkNoteContent = styled.p``
 const Ads = styled.img`
   padding: 0 100px;
-`;
+`
 
 const HowItWorksSection = () => (
   <HowItWorksContainer id="examples">
@@ -59,6 +59,6 @@ const HowItWorksSection = () => (
       </WorkNote>
     </HowItWorks>
   </HowItWorksContainer>
-);
+)
 
-export default HowItWorksSection;
+export default HowItWorksSection

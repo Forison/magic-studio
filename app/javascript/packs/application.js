@@ -4,14 +4,14 @@
 // that code so it'll be compiled.
 //= require material
 
-import Rails from '@rails/ujs';
-import Turbolinks from 'turbolinks';
-import * as ActiveStorage from '@rails/activestorage';
-import 'channels';
-import './magic_studio';
+import Rails from '@rails/ujs'
+import Turbolinks from 'turbolinks'
+import * as ActiveStorage from '@rails/activestorage'
+import 'channels'
+import './magic_studio'
 
-Rails.start();
-Turbolinks.start();
-ActiveStorage.start();
+Rails.start()
+Turbolinks.start()
+ActiveStorage.start()
 
 // ReactRailsUJS.mountComponents()

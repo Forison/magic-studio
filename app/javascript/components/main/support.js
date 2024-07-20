@@ -1,36 +1,36 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const SupportDiv = styled.div`
   background-color: black;
   color: white;
   display: flex;
-`;
+`
 
 const SupportHeader = styled(SupportDiv)`
   padding: 100px 200px;
   flex-direction: column;
-`;
+`
 
 const SupportHeaderTitle = styled(SupportDiv)`
   font-size: 50px;
   font-weight: bold;
-`;
+`
 
 const SupportHeaderContent = styled(SupportDiv)`
   font-size: 16px;
-`;
+`
 
 const SupoortContent = styled(SupportDiv)`
   padding: 50px 200px;
   gap: 50px;
   justify-content: space-between;
-`;
+`
 
 const Content = styled(SupportDiv)`
   padding-right: 50px;
   width: 15%;
-`;
+`
 
 const Support = () => (
   <>
@@ -69,6 +69,6 @@ const Support = () => (
       </Content>
     </SupoortContent>
   </>
-);
+)
 
-export default Support;
+export default Support

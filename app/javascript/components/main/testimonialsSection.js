@@ -1,25 +1,25 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const TestimonialsContainer = styled.section`
   padding: 50px 200px;
-`;
+`
 
 const Header = styled.div`
   padding-bottom: 50px;
   font-size: 50px;
   font-weight: bold;
-`;
+`
 
 const Body = styled.div`
   display: flex;
   justify-content: space-between;
-`;
+`
 
 const Testimonial = styled.div`
   width: 25%;
   gap: 10%;
-`;
+`
 
 const TestimonialsSection = () => (
   <TestimonialsContainer id="about">
@@ -45,6 +45,6 @@ const TestimonialsSection = () => (
       </Testimonial>
     </Body>
   </TestimonialsContainer>
-);
+)
 
-export default TestimonialsSection;
+export default TestimonialsSection

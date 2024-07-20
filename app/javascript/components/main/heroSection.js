@@ -1,7 +1,7 @@
 // HeroSection.js
-import React from 'react';
-import styled from 'styled-components';
-import heading from '../images/heading.jpg';
+import React from 'react'
+import styled from 'styled-components'
+import heading from '../images/heading.jpg'
 
 const HeroContainer = styled.section`
   background-color: #000;
@@ -10,29 +10,29 @@ const HeroContainer = styled.section`
   text-align: center;
   display: flex;
   margin-top: 60px;
-`;
+`
 
 const HeroTag = styled.div`
   display: flex;
   flex-direction: column;
   padding: 50px;
   width: 50%;
-`;
+`
 
 const HeroTitle = styled.h1`
   font-size: 48px;
   margin-bottom: 20px;
-`;
+`
 
 const HeroSubtitle = styled.p`
   font-size: 24px;
   margin-bottom: 40px;
-`;
+`
 
 const Image = styled.img`
   width: 35%;
   height: 100%;
-`;
+`
 
 const HeroSection = () => (
   <HeroContainer id="home">
@@ -44,6 +44,6 @@ const HeroSection = () => (
 
     <Image src={heading} alt="MagicStudio" />
   </HeroContainer>
-);
+)
 
-export default HeroSection;
+export default HeroSection

@@ -1,30 +1,30 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const ContactContainer = styled.section`
   padding: 50px;
   background-color: black;
   color: white;
-`;
+`
 
 const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
 
 const Input = styled.input`
   margin: 10px;
   padding: 10px;
   width: 300px;
-`;
+`
 
 const TextArea = styled.textarea`
   margin: 10px;
   padding: 10px;
   width: 300px;
   height: 100px;
-`;
+`
 
 const Button = styled.button`
   padding: 10px 20px;
@@ -33,7 +33,7 @@ const Button = styled.button`
   color: #fff;
   border: none;
   cursor: pointer;
-`;
+`
 
 const ContactSection = () => (
   <ContactContainer id="contact">
@@ -46,6 +46,6 @@ const ContactSection = () => (
       <Button type="submit">Submit</Button>
     </ContactForm>
   </ContactContainer>
-);
+)
 
-export default ContactSection;
+export default ContactSection
