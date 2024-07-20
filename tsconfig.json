@@ -23,11 +23,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "strict": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "app/javascript/index.d.ts",
-      "./node_modules/@types",
-      "./src/types"
+    "esModuleInterop": true,
+    "types": [
+      "jest",
+      "@testing-library/jest-dom"
     ],
     "baseUrl": ".",
     "paths": {

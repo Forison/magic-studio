@@ -2,7 +2,6 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
-//@ts-ignore
 import { createUploadLink } from 'apollo-upload-client'
 import Route from '../components/routes/Index'
 
