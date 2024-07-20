@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "resolveJsonModule": true,
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": [
-      "es6",
+      "esnext",
       "dom"
     ],
     "module": "esnext",
@@ -12,8 +14,27 @@
     "sourceMap": true,
     "target": "es5",
     "jsx": "react",
+    "allowSyntheticDefaultImports": true,
     "noEmit": true,
-    "allowSyntheticDefaultImports": true
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "strict": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "app/javascript/index.d.ts",
+      "./node_modules/@types",
+      "./src/types"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "components/*": [
+        "app/javascript/components/*"
+      ],
+    }
   },
   "exclude": [
     "**/*.spec.ts",

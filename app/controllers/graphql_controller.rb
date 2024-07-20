@@ -16,7 +16,7 @@ class GraphqlController < ApplicationController
       pundit: self
     }
 
-    result = WrepitSchema.execute(query, variables:, context:, operation_name:)
+    result = MagicStudioSchema.execute(query, variables:, context:, operation_name:)
     render json: result
   rescue StandardError => e
     raise e unless Rails.env.development?

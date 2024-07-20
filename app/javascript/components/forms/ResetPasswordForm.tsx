@@ -14,6 +14,7 @@ import {
   Stack,
   Typography,
   Box,
+  AlertColor,
 } from '@mui/material'
 import { strengthColor, strengthIndicator } from '../utils/passwordStrength'
 import { ResetPasswordSchema } from '../schema'
@@ -26,23 +27,24 @@ interface PasswordProp {
   password: string
   passwordConfirmation: string
 }
-const initialValues = {
+const initialValues: PasswordProp = {
   password: '',
-  PasswordConfirmation: ''
+  passwordConfirmation: ''
 }
 
 export default function ResetPasswordForm(): JSX.Element {
   const [level, setLevel] = useState({ color: '', label: '' })
-  const [showPassword, setShowPassword] = useState(false)
-  const [showPasswordConfirmation, setShowPasswordConfirmation] = useState(false)
+  const [showPassword, setShowPassword] = useState<boolean>(false)
+  const [showPasswordConfirmation, setShowPasswordConfirmation] = useState<boolean>(false)
   const [message, setMessage] = useState<string>()
-  const [severity, setSeverity] = useState(null)
+  const [severity, setSeverity] = useState<AlertColor>('success')
   const token = getToken()
+
   const [resetPassword, { loading }] = useMutation(RESET_PASSWORD, {
     onCompleted: (data) => {
       if (!!data) {
         setSeverity('success')
-        setMessage('Your Password was successfully reset, enjoy your WREPIT experience')
+        setMessage('Your Password was successfully reset, enjoy your MagicStudio experience')
       }
     },
     onError: () => {
@@ -65,7 +67,7 @@ export default function ResetPasswordForm(): JSX.Element {
     setLevel(strengthColor(temp))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: PasswordProp) => {
     resetPassword({
       variables: {
         password: event.password,

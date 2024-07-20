@@ -2,9 +2,9 @@
 
 require 'test_helper'
 
-class WrepitsControllerTest < ActionDispatch::IntegrationTest
+class MagicStudiosControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
-    get wrepits_index_url
+    get magic_studios_index_url
     assert_response :success
   end
 end

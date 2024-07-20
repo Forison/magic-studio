@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Otp < ApplicationRecord
   belongs_to :user
   validates :code, presence: true

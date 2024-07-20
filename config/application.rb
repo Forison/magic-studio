@@ -8,13 +8,11 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Wrepit
+module MagicStudio
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    if Rails.env.development? || Rails.env.test?
-      Dotenv::Railtie.load
-    end
+    Dotenv::Railtie.load if Rails.env.development? || Rails.env.test?
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class WrepitSchema < GraphQL::Schema
+class MagicStudioSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 

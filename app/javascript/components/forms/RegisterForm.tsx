@@ -15,6 +15,7 @@ import {
   Stack,
   Typography,
   Box,
+  AlertColor,
 } from '@mui/material'
 import { strengthColor, strengthIndicator } from '../utils/passwordStrength'
 import { SignUpSchema } from '../schema'
@@ -36,10 +37,10 @@ const initialValues = {
 
 export default function UserForm(): JSX.Element {
   const [level, setLevel] = useState({ color: '', label: '' })
-  const [showPassword, setShowPassword] = useState(false)
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-  const [message, setMessage] = useState('')
-  const [severity, setSeverity] = useState(null)
+  const [showPassword, setShowPassword] = useState<boolean>(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false)
+  const [message, setMessage] = useState<string>('')
+  const [severity, setSeverity] = useState<AlertColor>('success')
   const [register, { loading }] = useMutation(REGISTER_USER, {
     onCompleted: (data) => {
       if (!!data) {
@@ -53,11 +54,11 @@ export default function UserForm(): JSX.Element {
     }
   })
 
-  const handleClickShowPassword = () => {
+  const handleClickShowPassword = (): void => {
     setShowPassword(!showPassword)
   }
 
-  const handleClickShowConfirmPassword = () => {
+  const handleClickShowConfirmPassword = (): void => {
     setShowConfirmPassword(!showConfirmPassword)
   }
 
@@ -164,8 +165,7 @@ export default function UserForm(): JSX.Element {
                     isValid={!Boolean(touched.phone && errors.phone)}
                     inputProps={{
                       name: 'phone',
-                      id: 'phone',
-                      require: true
+                      id: 'phone'
                     }}
                   />
                 </Stack>

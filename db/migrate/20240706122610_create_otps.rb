@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateOtps < ActiveRecord::Migration[6.1]
   def change
     create_table :otps do |t|

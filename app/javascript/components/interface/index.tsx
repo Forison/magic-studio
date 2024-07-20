@@ -4,10 +4,10 @@ export interface Strength {
 }
 
 export interface User {
-  firstName: string
   lastName: string
+  firstName: string
   email: string
-  password: string
+  password?: string
   phone: string
   passwordConfirmation?: string
   imageUrl?: string

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Typography } from '@mui/material'
+import React from 'react';
+import { Typography } from '@mui/material';
 
 export default function PrivacyAndSecurity(): JSX.Element {
   return (
@@ -15,5 +15,5 @@ export default function PrivacyAndSecurity(): JSX.Element {
       Nesciunt quidem veniam Fugit fuga facere natus laborum accusamus perferendis unde?
       officiis reprehenderit! Quod dicta doloribus quo reprehenderit? Non, laborum.
     </Typography>
-  )
+  );
 }

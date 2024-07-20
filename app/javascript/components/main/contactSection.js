@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const ContactContainer = styled.section`
   padding: 50px;
@@ -35,19 +35,17 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const ContactSection = () => {
-  return (
-    <ContactContainer id="contact">
-      <h2>For Any Assistance Required Please Reach Out</h2>
-      <ContactForm>
-        <Input type="text" placeholder="First Name" required />
-        <Input type="text" placeholder="Last Name" required />
-        <Input type="email" placeholder="Email" required />
-        <TextArea placeholder="Leave us a message" required />
-        <Button type="submit">Submit</Button>
-      </ContactForm>
-    </ContactContainer>
-  );
-};
+const ContactSection = () => (
+  <ContactContainer id="contact">
+    <h2>For Any Assistance Required Please Reach Out</h2>
+    <ContactForm>
+      <Input type="text" placeholder="First Name" required />
+      <Input type="text" placeholder="Last Name" required />
+      <Input type="email" placeholder="Email" required />
+      <TextArea placeholder="Leave us a message" required />
+      <Button type="submit">Submit</Button>
+    </ContactForm>
+  </ContactContainer>
+);
 
-export default ContactSection
+export default ContactSection;

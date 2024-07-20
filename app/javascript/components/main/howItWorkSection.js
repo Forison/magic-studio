@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import heading from "../images/heading.jpg"
+import React from 'react';
+import styled from 'styled-components';
+import heading from '../images/heading.jpg';
 
 const HowItWorksContainer = styled.section`
   padding: 50px 100px;
@@ -27,40 +27,38 @@ const Ads = styled.img`
   padding: 0 100px;
 `;
 
-const HowItWorksSection = () => {
-  return (
-    <HowItWorksContainer id="examples">
-      <HowItWorks>
-        <WorkNote>
-          <WorkNoteHeader>How Wrepit Works</WorkNoteHeader>
-          <WorkNoteSemi>Flexible Terms</WorkNoteSemi>
-          <WorkNoteContent>
-            Your bank account will be linked to the lender for repayment. The
-            amount will be split equally every 30 days for the term chosen.
-            There is no fee or balloon payment at the end of each month or term
-            if payment is late. ​ ****All Payments will be made direct to the
-            lender, Alternative.****
-          </WorkNoteContent>
-        </WorkNote>
-        <Ads src={heading} alt="" />
-      </HowItWorks>
+const HowItWorksSection = () => (
+  <HowItWorksContainer id="examples">
+    <HowItWorks>
+      <WorkNote>
+        <WorkNoteHeader>How MagicStudio Works</WorkNoteHeader>
+        <WorkNoteSemi>Flexible Terms</WorkNoteSemi>
+        <WorkNoteContent>
+          Your bank account will be linked to the lender for repayment. The
+          amount will be split equally every 30 days for the term chosen.
+          There is no fee or balloon payment at the end of each month or term
+          if payment is late. ​ ****All Payments will be made direct to the
+          lender, Alternative.****
+        </WorkNoteContent>
+      </WorkNote>
+      <Ads src={heading} alt="" />
+    </HowItWorks>
 
-      <HowItWorks>
-        <Ads src={heading} alt="" />
-        <WorkNote>
-          <WorkNoteHeader>How Wrepit Works</WorkNoteHeader>
-          <WorkNoteSemi>Flexible Terms</WorkNoteSemi>
-          <WorkNoteContent>
-            Your bank account will be linked to the lender for repayment. The
-            amount will be split equally every 30 days for the term chosen.
-            There is no fee or balloon payment at the end of each month or term
-            if payment is late. ​ ****All Payments will be made direct to the
-            lender, Alternative.****
-          </WorkNoteContent>
-        </WorkNote>
-      </HowItWorks>
-    </HowItWorksContainer>
-  );
-};
+    <HowItWorks>
+      <Ads src={heading} alt="" />
+      <WorkNote>
+        <WorkNoteHeader>How MagicStudio Works</WorkNoteHeader>
+        <WorkNoteSemi>Flexible Terms</WorkNoteSemi>
+        <WorkNoteContent>
+          Your bank account will be linked to the lender for repayment. The
+          amount will be split equally every 30 days for the term chosen.
+          There is no fee or balloon payment at the end of each month or term
+          if payment is late. ​ ****All Payments will be made direct to the
+          lender, Alternative.****
+        </WorkNoteContent>
+      </WorkNote>
+    </HowItWorks>
+  </HowItWorksContainer>
+);
 
 export default HowItWorksSection;

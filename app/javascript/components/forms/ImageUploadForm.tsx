@@ -7,7 +7,7 @@ import {
   TextField,
 } from '@mui/material'
 
-interface imageProp {
+interface ImageProp {
   image: string
 }
 
@@ -18,7 +18,7 @@ export default function ImageUploadForm(): JSX.Element {
     handleSubmit,
     values,
     isSubmitting
-  } = useFormikContext<imageProp>()
+  } = useFormikContext<ImageProp>()
 
   return (
     <form noValidate onSubmit={handleSubmit} encType="multipart/form-data">

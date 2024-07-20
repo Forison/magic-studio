@@ -14,6 +14,7 @@ import { CONFIRM_USER } from '../api/mutations'
 import Banner from '../shared/Banner'
 import PhoneVerification from '../main/PhoneVerification'
 import { CURRENT_USER } from '../api/queries'
+import { AlertColor } from '@mui/material'
 
 // import { Amplify } from 'aws-amplify'
 // import { Authenticator } from '@aws-amplify/ui-react'
@@ -25,13 +26,13 @@ import { CURRENT_USER } from '../api/queries'
 
 export default function HomePage(): JSX.Element {
   const [message, setMessage] = useState<string>()
-  const [severity, setSeverity] = useState(null)
+  const [severity, setSeverity] = useState<AlertColor>('success')
   const { data } = useQuery(CURRENT_USER)
   const [confirmUser] = useMutation(CONFIRM_USER, {
     onCompleted: (data) => {
       if (!!data) {
         setSeverity('success')
-        setMessage('Your account has been confirmed, enjoy your WREPIT experience')
+        setMessage('Your account has been confirmed, enjoy your MagicStudio experience')
       }
     },
     onError: () => {

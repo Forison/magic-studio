@@ -1,14 +1,14 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Grid, Box } from '@mui/material'
 import AuthCard from './AuthCard'
 import Footer from './CopyRight'
-import styled from 'styled-components'
 
 interface Props {
   children: JSX.Element
 }
 
-const ImageContainer = styled.image`
+const ImageContainer = styled.div`
   margin: 0 auto;
   position: absolute;
   left: 45%;

@@ -54,7 +54,7 @@ export default function ProfilePhoto({ imageUrl, firstName, fullName }: Props): 
               variant="dot"
             >
               <ImageOrInitial
-                name={firstName}
+                firstName={firstName}
                 imageUrl={imageUrl}
                 sx={{ bgcolor: '#5bbff1', width: '180px', height: '180px' }}
               />

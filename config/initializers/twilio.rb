@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 Twilio.configure do |config|
   config.account_sid = ENV['TWILIO_ACCOUNT_SID']

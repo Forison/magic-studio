@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-scroll'
-import AccountMenu from './AccountMenu'
+// import AccountMenu from './AccountMenu'
 import { isProfilePage } from '../utils/pathUtil'
-import { useMutation, useQuery } from '@apollo/client'
-import { LOGOUT_USER } from '../api/mutations'
-import HomeIcon from '../shared/HomeIcon'
+// import { useMutation } from '@apollo/client'
+// import { LOGOUT_USER } from '../api/mutations'
+// import HomeIcon from '../shared/HomeIcon'
 
 // TODO: FIND A WORK AROUND TO DO THIS WITHOUT ARGUMENT TO RESOLVER
-const logoutEmail = 'foo@yahoo.com'
+// const logoutEmail = 'foo@yahoo.com'
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -45,17 +45,17 @@ interface Prop {
 }
 
 const Header = ({ showAccountMenu = false }: Prop) => {
-  const [logout] = useMutation(LOGOUT_USER, { onCompleted: () => { window.location.replace('/log_in') } })
+  // const [logout] = useMutation(LOGOUT_USER, { onCompleted: () => { window.location.replace('/log_in') } })
   return (
     <HeaderContainer>
-      <img src={require('../images/logo.png')} alt='Wrepit Company Logo' />
+      <img src={require('../images/logo.png')} alt='MagicStudio Company Logo' />
       <Nav>
         {isProfilePage() ?
           <>
-            <NavLink onClick={() => window.location.replace('/')}><HomeIcon /></NavLink>
-            <NavLink onClick={() => logout(({ variables: { email: logoutEmail } }))}>
-              Logout
-            </NavLink>
+            {/* <NavLink onClick={() => window.location.replace('/')}><HomeIcon /></NavLink> */}
+            {/* <NavLink onClick={() => logout(({ variables: { email: logoutEmail } }))}> */}
+            Logout
+            {/* </NavLink> */}
           </>
           : (
             <>
@@ -74,7 +74,7 @@ const Header = ({ showAccountMenu = false }: Prop) => {
               <NavLink to='contact' smooth={true} duration={1000}>
                 Contact
               </NavLink>
-              {showAccountMenu ? <AccountMenu /> : <NavLink onClick={() => window.location.replace('log_in')}>Sign In </NavLink>}
+              {/* {showAccountMenu ? <AccountMenu /> : <NavLink onClick={() => window.location.replace('log_in')}>Sign In </NavLink>} */}
             </>
           )}
       </Nav>

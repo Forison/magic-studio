@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Alert, IconButton, SxProps, Collapse } from '@mui/material'
+import { Alert, IconButton, SxProps, Collapse, AlertColor } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 
 interface Props {
-  severity: 'success' | 'error' | null
+  severity: AlertColor
   message: string
   sx?: SxProps
   withCloseIcon?: boolean

@@ -1,5 +1,5 @@
-import React from 'react'
-import { useFormikContext } from 'formik'
+import React from 'react';
+import { useFormikContext } from 'formik';
 import {
   Button,
   FormHelperText,
@@ -7,8 +7,7 @@ import {
   Stack,
   TextField,
   Typography,
-} from '@mui/material'
-
+} from '@mui/material';
 
 export default function VerifyPhoneNumberForm(): JSX.Element {
   const {
@@ -18,20 +17,20 @@ export default function VerifyPhoneNumberForm(): JSX.Element {
     handleSubmit,
     handleBlur,
     handleChange,
-  } = useFormikContext<any>()
+  } = useFormikContext<any>();
 
   return (
     <form noValidate onSubmit={handleSubmit}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Stack spacing={1}>
-            <Typography align='center'>Verify Phone Number</Typography>
+            <Typography align="center">Verify Phone Number</Typography>
             <TextField
-              id='code'
-              type='text'
+              id="code"
+              type="text"
               value={values.code}
-              name='code'
-              placeholder='Enter verification code'
+              name="code"
+              placeholder="Enter verification code"
               onChange={handleChange}
               onBlur={handleBlur}
               fullWidth
@@ -39,7 +38,7 @@ export default function VerifyPhoneNumberForm(): JSX.Element {
             />
           </Stack>
           {touched.code && typeof errors.code === 'string' && (
-            <FormHelperText error id='standard-weight-helper-code'>
+            <FormHelperText error id="standard-weight-helper-code">
               {errors.code}
             </FormHelperText>
           )}
@@ -48,12 +47,12 @@ export default function VerifyPhoneNumberForm(): JSX.Element {
           <Button
             disableElevation
             fullWidth
-            size='large'
-            type='submit'
-            variant='contained'
+            size="large"
+            type="submit"
+            variant="contained"
             sx={{
               background: '#5bbff1',
-              color: '#FFF'
+              color: '#FFF',
             }}
           >
             Verify phone number
@@ -61,5 +60,5 @@ export default function VerifyPhoneNumberForm(): JSX.Element {
         </Grid>
       </Grid>
     </form>
-  )
+  );
 }

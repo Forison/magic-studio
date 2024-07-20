@@ -3,12 +3,12 @@ import React from 'react'
 import { SxProps } from '@mui/material'
 
 interface Props {
-  name: string
-  imageUrl: string | null
+  firstName: string
+  imageUrl: string | undefined
   sx?: SxProps
 }
 
-const ImageOrInitial = ({ name, imageUrl, ...sx }: Props): JSX.Element => {
+const ImageOrInitial = ({ firstName, imageUrl, ...sx }: Props): JSX.Element => {
   //@ts-ignore
   if (imageUrl) return <Avatar alt="user_avatar" src={imageUrl} {...sx} />
   return (
@@ -17,7 +17,7 @@ const ImageOrInitial = ({ name, imageUrl, ...sx }: Props): JSX.Element => {
       {...sx}
       alt="user_initials"
     >
-      {name[0].toUpperCase()}
+      {firstName[0].toUpperCase()}
     </Avatar>
   )
 }

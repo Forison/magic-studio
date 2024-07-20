@@ -15,12 +15,12 @@ render my profile and Authentication pages
 
 ## Usage
 
-To a sub component of WREPIT's appplication
+To a sub component of MAGIC_STUDIO's appplication
 
 > Clone the repository to your local machine if invited
 
 ```sh
-$ https://github.com/renepuentes0718/wrepit-billing
+
 ```
 > cd into the directory
 

@@ -13,7 +13,7 @@ import 'react-phone-input-2/lib/style.css'
 import { User } from '../interface/index'
 
 
-export default function EditUserForm({ initialValues }): JSX.Element {
+export default function EditUserForm({ initialValues }: any): JSX.Element {
   const {
     setValues,
     setFieldValue,

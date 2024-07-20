@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
 import { useMutation } from '@apollo/client'
-import { User } from '../interface/index'
+import { User } from 'components/interface'
+import { AlertColor } from '@mui/material'
 import EditUserForm from '../forms/EditUserForm'
 import { UserUpdateSchema } from '../schema'
 import Banner from '../shared/Banner'
 import { UPDATE_USER } from '../api/mutations'
 
-interface Props {
-  user: User
-  showAuth: boolean
-}
 
 const initial = {
   firstName: '',
@@ -18,10 +15,11 @@ const initial = {
   email: '',
   phone: '',
 }
-
-export default function EditProfile({ user }): JSX.Element {
-  const [message, setMessage] = useState('')
-  const [severity, setSeverity] = useState(null)
+// TODO: change type to ideal one 
+export default function EditProfile({ user }: any): JSX.Element {
+  console.log(user)
+  const [message, setMessage] = useState<string>('')
+  const [severity, setSeverity] = useState<AlertColor>('success')
   const [mutate] = useMutation(UPDATE_USER, {
     onCompleted: (data) => {
       if (!!data) {

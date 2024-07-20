@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
 import Banner from '../shared/Banner'
-import { Box, Modal } from '@mui/material'
+import { AlertColor, Box, Modal } from '@mui/material'
 import { useMutation, useQuery } from '@apollo/client'
 import { PhoneNumberVerificationSchema } from '../schema'
 import { SEND_VERIFICATION_CODE, VERIFY_CODE } from '../api/mutations'
@@ -36,14 +36,14 @@ const style = {
 export default function PhoneVerification(): JSX.Element {
   const [view, setView] = useState<string>('sendOtp')
   const [_, setOpen] = useState(false)
-  const [message, setMessage] = useState<string>()
+  const [message, setMessage] = useState<string>('')
   const { data, loading } = useQuery(CURRENT_USER)
-  const [severity, setSeverity] = useState(null)
+  const [severity, setSeverity] = useState<AlertColor>('success')
   const [verifyCode] = useMutation(VERIFY_CODE, {
     onCompleted: (data) => {
       if (!!data) {
         setSeverity('success')
-        setMessage('Phone verification was successful, enjoy your WREPIT experience')
+        setMessage('Phone verification was successful, enjoy your MagicStudio experience')
         setTimeout(() => {
           setView('')
           setOpen(false)

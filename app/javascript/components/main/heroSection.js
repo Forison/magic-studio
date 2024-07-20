@@ -1,7 +1,7 @@
 // HeroSection.js
-import React from 'react'
-import styled from 'styled-components'
-import heading from '../images/heading.jpg'
+import React from 'react';
+import styled from 'styled-components';
+import heading from '../images/heading.jpg';
 
 const HeroContainer = styled.section`
   background-color: #000;
@@ -34,18 +34,16 @@ const Image = styled.img`
   height: 100%;
 `;
 
-const HeroSection = () => {
-  return (
-    <HeroContainer id='home'>
-      <HeroTag>
-        <HeroTitle>Be Flexible, Wrepit</HeroTitle>
-        <HeroSubtitle>When you need payment on your terms.</HeroSubtitle>
-        <HeroSubtitle>App coming soon</HeroSubtitle>
-      </HeroTag>
+const HeroSection = () => (
+  <HeroContainer id="home">
+    <HeroTag>
+      <HeroTitle>Be Flexible, MagicStudio</HeroTitle>
+      <HeroSubtitle>When you need payment on your terms.</HeroSubtitle>
+      <HeroSubtitle>App coming soon</HeroSubtitle>
+    </HeroTag>
 
-      <Image src={heading} alt='Wrepit Goods' />
-    </HeroContainer>
-  );
-};
+    <Image src={heading} alt="MagicStudio" />
+  </HeroContainer>
+);
 
-export default HeroSection
+export default HeroSection;

@@ -1,5 +1,5 @@
 {
-  "name": "WREPIT",
+  "name": "MAGICSTUDIO",
   "private": true,
   "dependencies": {
     "@ant-design/colors": "^7.0.2",
@@ -22,9 +22,12 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/apollo-upload-client": "^18.0.0",
+    "@types/node": "^20.14.11",
     "@types/react": "^18.2.77",
     "@types/react-dom": "^18.2.25",
-    "apollo-upload-client": "^17.0.0",
+    "@types/react-scroll": "^1.8.10",
+    "apollo-upload-client": "^18.0.1",
     "aws-amplify": "^6.3.8",
     "axios": "^1.7.2",
     "babel-plugin-transform-react-jsx": "^6.24.1",

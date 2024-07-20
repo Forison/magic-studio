@@ -51,7 +51,7 @@ export default function AccountMenu(): JSX.Element {
             aria-expanded={open ? 'true' : undefined}
           >
             <ImageOrInitial
-              name={data.currentUser.firstName}
+              firstName={data.currentUser.firstName}
               imageUrl={data.currentUser.imageUrl}
               sx={{ bgcolor: '#5bbff1' }}
             />
