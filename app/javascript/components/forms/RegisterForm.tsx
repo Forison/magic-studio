@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useMutation } from '@apollo/client'
 import { Formik } from 'formik'
 import EyeOutlined from '@ant-design/icons/EyeOutlined'
@@ -261,6 +262,17 @@ export default function UserForm(): JSX.Element {
                 )}
               </Grid>
               <Grid item xs={12}>
+                <Typography
+                  variant='body2'
+                  component={Link}
+                  to='/log_in'
+                  sx={{ textDecoration: 'none', marginTop: '1rem', textAlign: 'center' }}
+                  color='primary'
+                >
+                  Already have an account? Sign in.
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
                 <Button
                   disableElevation
                   fullWidth
@@ -269,8 +281,11 @@ export default function UserForm(): JSX.Element {
                   type='submit'
                   variant='contained'
                   sx={{
-                    background: '#5bbff1',
-                    color: '#FFF'
+                    background: '#000',
+                    color: '#FFF',
+                    ":hover": {
+                      background: '#353935'
+                    }
                   }}
                 >
                   Create Account

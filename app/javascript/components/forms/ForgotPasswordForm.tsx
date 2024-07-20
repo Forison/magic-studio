@@ -7,11 +7,13 @@ import {
   Grid,
   Stack,
   TextField,
+  Typography,
 } from '@mui/material'
 import { forgotPasswordSchema } from '../schema'
 import Banner from '../shared/Banner'
 import { useMutation } from '@apollo/client'
 import { FORGOT_PASSWORD } from '../api/mutations'
+import { Link } from 'react-router-dom'
 
 const initialValue = {
   email: '',
@@ -75,6 +77,17 @@ export default function ForgotPasswordForm(): JSX.Element {
                 )}
               </Grid>
               <Grid item xs={12}>
+                <Typography
+                  component={Link}
+                  variant='body2'
+                  to='/register'
+                  sx={{ textDecoration: 'none', marginTop: '1rem', textAlign: 'center' }}
+                  color='primary'
+                >
+                  Don't have an account? Sign up.
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
                 <Button
                   disableElevation
                   disabled={loading}
@@ -83,8 +96,11 @@ export default function ForgotPasswordForm(): JSX.Element {
                   type='submit'
                   variant='contained'
                   sx={{
-                    background: '#5bbff1',
-                    color: '#FFF'
+                    background: '#000',
+                    color: '#FFF',
+                    ":hover": {
+                      background: '#353935'
+                    }
                   }}
                 >
                   Request Password change

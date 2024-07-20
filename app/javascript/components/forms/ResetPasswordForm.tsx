@@ -36,7 +36,7 @@ export default function ResetPasswordForm(): JSX.Element {
   const [level, setLevel] = useState({ color: '', label: '' })
   const [showPassword, setShowPassword] = useState<boolean>(false)
   const [showPasswordConfirmation, setShowPasswordConfirmation] = useState<boolean>(false)
-  const [message, setMessage] = useState<string>()
+  const [message, setMessage] = useState<string>('')
   const [severity, setSeverity] = useState<AlertColor>('success')
   const token = getToken()
 
@@ -184,8 +184,11 @@ export default function ResetPasswordForm(): JSX.Element {
                   type='submit'
                   variant='contained'
                   sx={{
-                    background: '#5bbff1',
-                    color: '#FFF'
+                    background: '#000',
+                    color: '#FFF',
+                    ":hover": {
+                      background: '#353935'
+                    }
                   }}
                 >
                   Reset Password

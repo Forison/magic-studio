@@ -8,7 +8,7 @@ const FooterContainer = styled.footer`
 
 const Footer = (): JSX.Element => (
   <FooterContainer>
-    <p>&copy; 2019 MagicStudio. All Rights Reserved.</p>
+    <p>&copy; 2019 Magic Studio. All Rights Reserved.</p>
   </FooterContainer>
 );
 

@@ -1,6 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Grid, Box } from '@mui/material'
+import { Grid, ImageList, ImageListItem } from '@mui/material'
 import AuthCard from './AuthCard'
 import Footer from './CopyRight'
 
@@ -8,40 +7,53 @@ interface Props {
   children: JSX.Element
 }
 
-const ImageContainer = styled.div`
-  margin: 0 auto;
-  position: absolute;
-  left: 45%;
-  top: 15px;
-`;
-
 export default function AuthWrapper({ children }: Props): JSX.Element {
   return (
-    <Box sx={{ minHeight: '100vh' }}>
-      <Grid container direction='column' justifyContent='flex-end' sx={{ minHeight: '100vh' }}>
-        <ImageContainer>
-          <img
-            src={require("../images/logo.png")}
-          />
-        </ImageContainer>
-        <Grid item xs={12}>
-          <Grid
-            item
-            xs={12}
-            container
-            justifyContent='center'
-            alignItems='center'
-            sx={{ minHeight: { xs: 'calc(100vh - 210px)', sm: 'calc(100vh - 134px)', md: 'calc(100vh - 112px)' } }}
-          >
-            <Grid item>
-              <AuthCard>{children}</AuthCard>
-            </Grid>
+    <Grid container>
+      <Grid item md={7} sx={{ display: { sm: 'none', md: 'block' } }}>
+        <ImageList sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          margin: 0
+        }}>
+          <ImageListItem>
+            <img src={require('../images/auth.png')} style={{ height: '100vh' }} />
+          </ImageListItem>
+        </ImageList>
+      </Grid>
+
+      <Grid
+        container
+        direction='column'
+        item
+        xs={12} md={5}
+      >
+        <ImageList sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <ImageListItem>
+            <img src={require('../images/logo.png')} style={{ width: '200px' }} />
+          </ImageListItem>
+        </ImageList>
+        <Grid
+          container
+          justifyContent='center'
+          alignItems='center'
+          sx={{
+            minHeight: { xs: 'calc(100vh - 210px)', sm: 'calc(100vh - 134px)', md: 'calc(100vh - 112px)' },
+            marginTop: '-100px'
+          }}
+        >
+          <AuthCard>{children}</AuthCard>
+          <Grid item xs={12} sx={{ marginTop: '-100px' }}>
+            <Footer />
           </Grid>
         </Grid>
-        <Grid item xs={12} sx={{ m: 3, mt: 1 }}>
-          <Footer />
-        </Grid>
       </Grid>
-    </Box>
+    </Grid>
+
   )
 }

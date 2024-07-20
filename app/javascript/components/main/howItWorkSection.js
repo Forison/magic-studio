@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import heading from '../images/heading.jpg'
+import heading from '../images/logo.png'
 
 const HowItWorksContainer = styled.section`
   padding: 50px 100px;

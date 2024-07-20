@@ -5,8 +5,6 @@ import EyeOutlined from '@ant-design/icons/EyeOutlined'
 import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined'
 import {
   Button,
-  Checkbox,
-  FormControlLabel,
   FormHelperText,
   Grid,
   InputAdornment,
@@ -36,7 +34,6 @@ interface SignInProps {
 
 
 export default function LoginForm(): JSX.Element {
-  const [checked, setChecked] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [message, setMessage] = useState('')
   const [severity, setSeverity] = useState<AlertColor>('success')
@@ -139,18 +136,9 @@ export default function LoginForm(): JSX.Element {
 
               <Grid item xs={12} sx={{ mt: -1 }}>
                 <Stack direction='row' justifyContent='space-between' alignItems='center' spacing={2}>
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        checked={checked}
-                        onChange={(event) => setChecked(event.target.checked)}
-                        name='checked'
-                        color='primary'
-                        size='small'
-                      />
-                    }
-                    label={<Typography>Keep me sign in</Typography>}
-                  />
+                  <Typography component={RouterLink} to="/register" variant="body2" sx={{ textDecoration: 'none' }} color="primary">
+                    Don't have an account?
+                  </Typography>
                   <Typography component={RouterLink} to='/forgot_password' variant='body2' sx={{ textDecoration: 'none' }} color='primary'>
                     Forgot Password?
                   </Typography>
@@ -165,8 +153,11 @@ export default function LoginForm(): JSX.Element {
                   type='submit'
                   variant='contained'
                   sx={{
-                    background: '#5bbff1',
-                    color: '#FFF'
+                    background: '#000',
+                    color: '#FFF',
+                    ":hover": {
+                      background: '#353935'
+                    }
                   }}
                 >
                   Login
