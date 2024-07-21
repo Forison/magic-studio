@@ -5,7 +5,6 @@ import { Formik } from 'formik'
 import EyeOutlined from '@ant-design/icons/EyeOutlined'
 import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined'
 import {
-  Button,
   FormControl,
   FormHelperText,
   Grid,
@@ -24,8 +23,10 @@ import Banner from '../shared/Banner'
 // import Omniauth from '../shared/OmniAuth'
 import { User } from '../interface/index'
 import { REGISTER_USER } from '../api/mutations'
+import AuthSubmitButton from 'components/shared/AuthSubmitButton'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+
 
 const initialValues = {
   firstName: '',
@@ -220,7 +221,6 @@ export default function UserForm(): JSX.Element {
                       </Grid>
                     </Grid>
                   </FormControl>
-
                 )}
                 {!values.password && touched.password && typeof errors.password === 'string' && (
                   <FormHelperText error id='helper-text-password-signup'>
@@ -273,23 +273,7 @@ export default function UserForm(): JSX.Element {
                 </Typography>
               </Grid>
               <Grid item xs={12}>
-                <Button
-                  disableElevation
-                  fullWidth
-                  disabled={loading}
-                  size='large'
-                  type='submit'
-                  variant='contained'
-                  sx={{
-                    background: '#000',
-                    color: '#FFF',
-                    ":hover": {
-                      background: '#353935'
-                    }
-                  }}
-                >
-                  Create Account
-                </Button>
+                <AuthSubmitButton loading={loading} label='Create Account' />
               </Grid>
               <Grid item xs={12}>
                 {/* <Omniauth title="Sign up with" /> */}

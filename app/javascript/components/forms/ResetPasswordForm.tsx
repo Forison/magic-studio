@@ -3,7 +3,6 @@ import { Formik } from 'formik'
 import EyeOutlined from '@ant-design/icons/EyeOutlined'
 import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined'
 import {
-  Button,
   FormControl,
   FormHelperText,
   Grid,
@@ -22,6 +21,7 @@ import { RESET_PASSWORD } from '../api/mutations'
 import { useMutation } from '@apollo/client'
 import { clearUrl, getToken } from '../utils/pathUtil'
 import Banner from '../shared/Banner'
+import AuthSubmitButton from 'components/shared/AuthSubmitButton'
 
 interface PasswordProp {
   password: string
@@ -176,23 +176,7 @@ export default function ResetPasswordForm(): JSX.Element {
                 )}
               </Grid>
               <Grid item xs={12}>
-                <Button
-                  disableElevation
-                  disabled={loading}
-                  fullWidth
-                  size='large'
-                  type='submit'
-                  variant='contained'
-                  sx={{
-                    background: '#000',
-                    color: '#FFF',
-                    ":hover": {
-                      background: '#353935'
-                    }
-                  }}
-                >
-                  Reset Password
-                </Button>
+                <AuthSubmitButton loading={loading} label='Reset Password' />
               </Grid>
             </Grid>
           </form>

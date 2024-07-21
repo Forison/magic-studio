@@ -1,11 +1,11 @@
 import React from 'react'
 import { useFormikContext } from 'formik'
 import {
-  Button,
   Grid,
   Stack,
   TextField,
 } from '@mui/material'
+import AuthSubmitButton from 'components/shared/AuthSubmitButton'
 
 interface ImageProp {
   image: string
@@ -37,20 +37,7 @@ export default function ImageUploadForm(): JSX.Element {
           </Stack>
         </Grid>
         <Grid item xs={12}>
-          <Button
-            disableElevation
-            disabled={isSubmitting}
-            fullWidth
-            size='large'
-            type='submit'
-            variant='contained'
-            sx={{
-              background: '#5bbff1',
-              color: '#FFF'
-            }}
-          >
-            Upload Your Avatar
-          </Button>
+          <AuthSubmitButton loading={isSubmitting} label='Upload Your Avatar' />
         </Grid>
       </Grid>
     </form>

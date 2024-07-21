@@ -4,7 +4,6 @@ import { Formik } from 'formik'
 import EyeOutlined from '@ant-design/icons/EyeOutlined'
 import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined'
 import {
-  Button,
   FormHelperText,
   Grid,
   InputAdornment,
@@ -16,10 +15,12 @@ import {
   AlertColor,
 } from '@mui/material'
 // import Omniauth from '../shared/OmniAuth'
+import AuthSubmitButton from 'components/shared/AuthSubmitButton'
 import { LoginSchema } from '../schema'
 import { useMutation } from '@apollo/client'
 import Banner from '../shared/Banner'
 import { SIGNIN_USER } from '../api/mutations'
+
 
 
 const initialValues = {
@@ -145,23 +146,7 @@ export default function LoginForm(): JSX.Element {
                 </Stack>
               </Grid>
               <Grid item xs={12}>
-                <Button
-                  disableElevation
-                  disabled={loading}
-                  fullWidth
-                  size='large'
-                  type='submit'
-                  variant='contained'
-                  sx={{
-                    background: '#000',
-                    color: '#FFF',
-                    ":hover": {
-                      background: '#353935'
-                    }
-                  }}
-                >
-                  Login
-                </Button>
+                <AuthSubmitButton loading={loading} label='Login' />
               </Grid>
               <Grid item xs={12}>
                 {/* <Omniauth title="Login with" /> */}

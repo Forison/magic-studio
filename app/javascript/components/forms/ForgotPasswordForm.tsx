@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Formik } from 'formik'
 import {
   AlertColor,
-  Button,
   FormHelperText,
   Grid,
   Stack,
@@ -14,6 +13,7 @@ import Banner from '../shared/Banner'
 import { useMutation } from '@apollo/client'
 import { FORGOT_PASSWORD } from '../api/mutations'
 import { Link } from 'react-router-dom'
+import AuthSubmitButton from 'components/shared/AuthSubmitButton'
 
 const initialValue = {
   email: '',
@@ -88,23 +88,7 @@ export default function ForgotPasswordForm(): JSX.Element {
                 </Typography>
               </Grid>
               <Grid item xs={12}>
-                <Button
-                  disableElevation
-                  disabled={loading}
-                  fullWidth
-                  size='large'
-                  type='submit'
-                  variant='contained'
-                  sx={{
-                    background: '#000',
-                    color: '#FFF',
-                    ":hover": {
-                      background: '#353935'
-                    }
-                  }}
-                >
-                  Request Password change
-                </Button>
+                <AuthSubmitButton loading={loading} label='Request Password change' />
               </Grid>
             </Grid>
           </form>

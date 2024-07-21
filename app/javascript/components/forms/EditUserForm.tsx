@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useFormikContext } from 'formik'
 import PhoneInput from 'react-phone-input-2'
 import {
-  Button,
   FormHelperText,
   Grid,
   InputLabel,
@@ -11,6 +10,7 @@ import {
 } from '@mui/material'
 import 'react-phone-input-2/lib/style.css'
 import { User } from '../interface/index'
+import AuthSubmitButton from 'components/shared/AuthSubmitButton'
 
 
 export default function EditUserForm({ initialValues }: any): JSX.Element {
@@ -122,20 +122,7 @@ export default function EditUserForm({ initialValues }: any): JSX.Element {
         </Grid>
 
         <Grid item xs={12}>
-          <Button
-            disableElevation
-            fullWidth
-            disabled={isSubmitting}
-            size='large'
-            type='submit'
-            variant='contained'
-            sx={{
-              background: '#5bbff1',
-              color: '#FFF'
-            }}
-          >
-            Update Account
-          </Button>
+          <AuthSubmitButton loading={isSubmitting} label='Update Account' />
         </Grid>
       </Grid>
     </form>

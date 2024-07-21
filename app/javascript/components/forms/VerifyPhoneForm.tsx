@@ -1,13 +1,13 @@
-import React from 'react';
-import { useFormikContext } from 'formik';
+import React from 'react'
+import { useFormikContext } from 'formik'
 import {
-  Button,
   FormHelperText,
   Grid,
   Stack,
   TextField,
   Typography,
-} from '@mui/material';
+} from '@mui/material'
+import AuthSubmitButton from 'components/shared/AuthSubmitButton'
 
 export default function VerifyPhoneNumberForm(): JSX.Element {
   const {
@@ -17,7 +17,8 @@ export default function VerifyPhoneNumberForm(): JSX.Element {
     handleSubmit,
     handleBlur,
     handleChange,
-  } = useFormikContext<any>();
+    isSubmitting,
+  } = useFormikContext<any>()
 
   return (
     <form noValidate onSubmit={handleSubmit}>
@@ -44,21 +45,9 @@ export default function VerifyPhoneNumberForm(): JSX.Element {
           )}
         </Grid>
         <Grid item xs={12}>
-          <Button
-            disableElevation
-            fullWidth
-            size="large"
-            type="submit"
-            variant="contained"
-            sx={{
-              background: '#5bbff1',
-              color: '#FFF',
-            }}
-          >
-            Verify phone number
-          </Button>
+          <AuthSubmitButton loading={isSubmitting} label='Verify phone number' />
         </Grid>
       </Grid>
     </form>
-  );
+  )
 }

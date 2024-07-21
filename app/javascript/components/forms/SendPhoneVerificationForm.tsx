@@ -1,13 +1,13 @@
 import React from 'react'
 import { useFormikContext } from 'formik'
 import {
-  Button,
   FormHelperText,
   Grid,
   Stack,
   Typography,
 } from '@mui/material'
 import PhoneInput from 'react-phone-input-2'
+import AuthSubmitButton from 'components/shared/AuthSubmitButton'
 
 interface Prop {
   phone: string
@@ -38,20 +38,7 @@ export default function SendPhoneVerificationForm({
           </FormHelperText>
         </Grid>
         <Grid item xs={12}>
-          <Button
-            disableElevation
-            disabled={isSubmitting}
-            fullWidth
-            size='large'
-            type='submit'
-            variant='contained'
-            sx={{
-              background: '#5bbff1',
-              color: '#FFF'
-            }}
-          >
-            Request OTP Code
-          </Button>
+          <AuthSubmitButton loading={isSubmitting} label='Request OTP Code' />
         </Grid>
       </Grid>
     </form>
