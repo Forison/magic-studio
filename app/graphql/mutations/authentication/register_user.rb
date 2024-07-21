@@ -13,7 +13,7 @@ module Mutations
 
       def resolve(**args)
         byebug
-        Rails.logger.debug '------------>>>'
+        p '------------>>>'
         user = User.new(
           unconfirmed_email:    args[:email],
           password:             args[:password],

@@ -121,7 +121,7 @@ export default function LoginForm(): JSX.Element {
                           edge='end'
                           color='secondary'
                         >
-                          {showPassword ? <EyeOutlined /> : <EyeInvisibleOutlined />}
+                          {showPassword ? <EyeOutlined style={{ color: '#353935' }} /> : <EyeInvisibleOutlined style={{ color: '#353935' }} />}
                         </IconButton>
                       </InputAdornment>
                     }

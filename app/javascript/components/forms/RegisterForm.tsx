@@ -201,7 +201,7 @@ export default function UserForm(): JSX.Element {
                           edge='end'
                           color='secondary'
                         >
-                          {showPassword ? <EyeOutlined /> : <EyeInvisibleOutlined />}
+                          {showPassword ? <EyeOutlined style={{ color: '#353935' }} /> : <EyeInvisibleOutlined style={{ color: '#353935' }} />}
                         </IconButton>
                       </InputAdornment>
                     }
@@ -248,7 +248,7 @@ export default function UserForm(): JSX.Element {
                           edge='end'
                           color='secondary'
                         >
-                          {showConfirmPassword ? <EyeOutlined /> : <EyeInvisibleOutlined />}
+                          {showConfirmPassword ? <EyeOutlined style={{ color: '#353935' }} /> : <EyeInvisibleOutlined style={{ color: '#353935' }} />}
                         </IconButton>
                       </InputAdornment>
                     }
