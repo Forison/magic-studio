@@ -6,14 +6,12 @@ module Mutations
       argument :email, String, required: true
       argument :password, String, required: true
       argument :first_name, String, required: true
-      argument :last_name_name, String, required: true
+      argument :last_name, String, required: true
       argument :phone, String, required: true
 
       field :success, Boolean, null: false
 
       def resolve(**args)
-        byebug
-        p '------------>>>'
         user = User.new(
           unconfirmed_email:    args[:email],
           password:             args[:password],
