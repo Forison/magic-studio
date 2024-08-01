@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import HomePage from '../main/HomePage';
-import ProfileWrapper from '../profile/ProfileWrapper';
+// import ProfileWrapper from '../profile/ProfileWrapper';
 import Login from '../authentication/Login';
 import Register from '../authentication/Register';
 import ResetPassword from '../authentication/ResetPassword';
@@ -11,9 +11,9 @@ import { CURRENT_USER } from '../api/queries';
 import Loading from '../shared/Loading';
 
 export default function Index(): JSX.Element {
-  const { data, loading } = useQuery(CURRENT_USER);
+  const { loading } = useQuery(CURRENT_USER);
   if (loading) return <Loading />;
-  const isAuthenticated = !!data.currentUser;
+  // const isAuthenticated = !!data.currentUser;
   return (
     <>
       <Router>
@@ -29,7 +29,7 @@ export default function Index(): JSX.Element {
           <Route path="/home/?token=:token" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/" element={<HomePage />} />
-          <Route path="/Profile" element={!isAuthenticated ? <Login /> : <ProfileWrapper />} />
+          {/* <Route path="/Profile" element={!isAuthenticated ? <Login /> : <ProfileWrapper />} /> */}
         </Routes>
       </Router>
     </>
