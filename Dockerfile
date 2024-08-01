@@ -1,3 +1,4 @@
+# Base image
 ARG RUBY_VERSION=3.1.4
 FROM ruby:$RUBY_VERSION
 
@@ -21,19 +22,17 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 # Rails app lives here
 WORKDIR /rails
 
-# Set production environment
-ENV RAILS_LOG_TO_STDOUT="1" \
-    RAILS_SERVE_STATIC_FILES="true" \
-    RAILS_ENV="production" \
-    BUNDLE_WITHOUT="development"
+# Set environment variable for the build
+ARG RAILS_ENV
+ENV RAILS_ENV=$RAILS_ENV
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
-# Install frontend dependencies without devDependencies
+# Install frontend dependencies
 COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile --production
+RUN yarn install --frozen-lockfile
 
 # Copy application code
 COPY . .
@@ -42,12 +41,17 @@ COPY . .
 RUN bundle exec bootsnap precompile --gemfile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE=1 RAILS_ENV=production bin/rails assets:precompile
+RUN if [ "$RAILS_ENV" = "production" ]; then \
+    SECRET_KEY_BASE=1 bin/rails assets:precompile; \
+    fi
 
 # Entrypoint prepares the database.
 COPY bin/docker-entrypoint /rails/bin/
 RUN chmod +x /rails/bin/docker-entrypoint
+
+# Use an absolute path for the entry point script
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 5000
 CMD ["./bin/rails", "server"]

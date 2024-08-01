@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   db:
     image: postgres:14.2-alpine
@@ -12,10 +14,13 @@ services:
     ports:
       - "5432:5432"
   demo-web:
-    build: .
-    command: "./bin/rails server"
+    build:
+      context: .
+      args:
+        - RAILS_ENV=development
+    command: "./bin/rails server -b 0.0.0.0"
     environment:
-      - RAILS_ENV=${RAILS_ENV}
+      - RAILS_ENV=development
       - POSTGRES_HOST=${POSTGRES_HOST}
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
